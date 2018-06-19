@@ -14,7 +14,7 @@ public class ArticalService {
 	@Autowired
 	ArticalDAO articalDao;
 	
-	public List<Artical> getAllArticales() {
+	public List getAllArticales() {
 		return articalDao.getAllArticales();
 	}
 }
