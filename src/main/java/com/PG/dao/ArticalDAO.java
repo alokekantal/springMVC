@@ -17,6 +17,6 @@ public class ArticalDAO {
 		Session session = new Configuration().configure().buildSessionFactory().openSession();
 		Transaction t = session.beginTransaction();
 		Criteria c = session.createCriteria(Artical.class);
-		 return c.list();
+		 return c.list();		 
 	}
 }
