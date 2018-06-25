@@ -15,6 +15,7 @@ import com.PG.service.ArticalService;
 @RestController
 @RequestMapping("user")
 @EnableWebMvc
+
 @CrossOrigin(origins = {"http://localhost:4200"})
 public class ArticalController {
 	@Autowired
