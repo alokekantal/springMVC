@@ -1,9 +1,11 @@
 package com.PG.controller;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +27,13 @@ public class ArticalController {
 	@ResponseBody
 	public List<Artical> getAllArticles(){
 		List articales =  articalService.getAllArticales();		
+		return articales;
+	}
+	
+	@RequestMapping("/article")
+	@ResponseBody
+	public Serializable createArtical(@RequestBody Artical artical){
+		Serializable articales =  articalService.creteArtical(artical);		
 		return articales;
 	}
 }

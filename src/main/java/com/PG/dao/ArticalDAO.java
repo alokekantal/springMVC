@@ -1,5 +1,7 @@
 package com.PG.dao;
+import java.io.Serializable;
 import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
@@ -18,5 +20,14 @@ public class ArticalDAO {
 		Transaction t = session.beginTransaction();
 		Criteria c = session.createCriteria(Artical.class);
 		 return c.list();		 
+	}
+	
+	public Serializable createArticle(Artical artical) {
+		Session session = new Configuration().configure().buildSessionFactory().openSession();
+		Transaction t = session.beginTransaction();
+		Serializable id = session.save(artical);
+		t.commit();
+		session.close();
+		return id;
 	}
 }

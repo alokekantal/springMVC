@@ -1,6 +1,7 @@
 package com.PG.service;
 
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,9 @@ public class ArticalService {
 	
 	public List getAllArticales() {
 		return articalDao.getAllArticales();
+	}
+	
+	public Serializable creteArtical(Artical artical) {
+		return articalDao.createArticle(artical);
 	}
 }
